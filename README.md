@@ -23,6 +23,13 @@ A method for finding polynomial roots
 
 ![obraz](https://user-images.githubusercontent.com/718163/32727758-080f5bc6-c87e-11e7-9bcb-a76652a09249.png)
 
-### Przykład obliczeniowy
+## Przykład obliczeniowy
 
 ![img_20171113_141900_1](https://user-images.githubusercontent.com/718163/32727843-6aa1de80-c87e-11e7-9909-9557afd859ed.jpg)
+
+
+## Program
+
+`Source: http://www.geeksforgeeks.org/program-muller-method/`
+
+In file mueller.cpp
