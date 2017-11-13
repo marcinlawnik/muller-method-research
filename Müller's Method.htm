@@ -1,0 +1,445 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<html><head>
+<title>Müller's Method</title>
+<meta name="description" content="Müller's Method">
+<meta name="keywords" content="sourcea">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="Generator" content="jLaTeX2HTML v2002 JA patch-1.4">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="M%C3%BCller's%20Method_pliki/sourcea.css">
+
+<link rel="previous" href="http://www.physics.arizona.edu/~restrepo/475A/Notes/sourcea-/node24.html">
+<link rel="up" href="http://www.physics.arizona.edu/~restrepo/475A/Notes/sourcea-/node23.html">
+<link rel="next" href="http://www.physics.arizona.edu/~restrepo/475A/Notes/sourcea-/node26.html">
+</head>
+
+<body bgcolor="#ffffff">
+<!--Navigation Panel-->
+<a name="tex2html427" href="http://www.physics.arizona.edu/~restrepo/475A/Notes/sourcea-/node26.html">
+<img alt="next" src="file:/usr/share/latex2html/icons/next.png" height="24" width="37" border="0" align="BOTTOM"></a> 
+<a name="tex2html425" href="http://www.physics.arizona.edu/~restrepo/475A/Notes/sourcea-/node23.html">
+<img alt="up" src="file:/usr/share/latex2html/icons/up.png" height="24" width="26" border="0" align="BOTTOM"></a> 
+<a name="tex2html421" href="http://www.physics.arizona.edu/~restrepo/475A/Notes/sourcea-/node24.html">
+<img alt="previous" src="file:/usr/share/latex2html/icons/prev.png" height="24" width="63" border="0" align="BOTTOM"></a>   
+<br>
+<b> Next:</b> <a name="tex2html428" href="http://www.physics.arizona.edu/~restrepo/475A/Notes/sourcea-/node26.html">FUNCTION NORMS</a>
+<b> Up:</b> <a name="tex2html426" href="http://www.physics.arizona.edu/~restrepo/475A/Notes/sourcea-/node23.html">Zeros of Polynomials, Horner's</a>
+<b> Previous:</b> <a name="tex2html422" href="http://www.physics.arizona.edu/~restrepo/475A/Notes/sourcea-/node24.html">Horner's Method</a>
+<br>
+<br>
+<!--End of Navigation Panel-->
+
+<h3><a name="SECTION00057200000000000000">
+Müller's Method</a>
+</h3>
+
+<p>
+Developed in  (1956). Used to  find zeros of arbitrary analytic
+functions (particularly useful in finding roots of polynomials.)
+It is a variation of the secant method (see <a href="http://www.physics.arizona.edu/~restrepo/475A/Notes/sourcea-/node20.html#secnt">5.5</a>). The
+process is illustrated in Figure <a href="http://www.physics.arizona.edu/~restrepo/475A/Notes/sourcea-/node25.html#fg.mull">26</a>. It is also useful
+when searching for complex roots of analytic functions.  (Recall:
+A function is analytic at a point <img src="M%C3%BCller's%20Method_pliki/img621.png" alt="$x_0$" height="33" width="23" border="0" align="MIDDLE"> if the function has a
+convergent Taylor series at <img src="M%C3%BCller's%20Method_pliki/img621.png" alt="$x_0$" height="33" width="23" border="0" align="MIDDLE">.  A function is analytic in a
+region if it is analytic at every point in the region.)
+
+</p><p>
+In the secant method we start with <img src="M%C3%BCller's%20Method_pliki/img108.png" alt="$2$" height="17" width="14" border="0" align="BOTTOM"> initial guesses <img src="M%C3%BCller's%20Method_pliki/img621.png" alt="$x_0$" height="33" width="23" border="0" align="MIDDLE"> and
+<img src="M%C3%BCller's%20Method_pliki/img436.png" alt="$x_1$" height="33" width="23" border="0" align="MIDDLE"> The next approximation <img src="M%C3%BCller's%20Method_pliki/img25.png" alt="$x_2$" height="33" width="23" border="0" align="MIDDLE"> is the intersection with the
+<img src="M%C3%BCller's%20Method_pliki/img16.png" alt="$x$" height="17" width="15" border="0" align="BOTTOM"> axis of the line (<img src="M%C3%BCller's%20Method_pliki/img815.png" alt="$x_0, f(x_0)$" height="37" width="75" border="0" align="MIDDLE">) and (<img src="M%C3%BCller's%20Method_pliki/img816.png" alt="$x_1, f(x_1)$" height="37" width="75" border="0" align="MIDDLE">).  Then we
+continue with <img src="M%C3%BCller's%20Method_pliki/img436.png" alt="$x_1$" height="33" width="23" border="0" align="MIDDLE"> and <img src="M%C3%BCller's%20Method_pliki/img25.png" alt="$x_2$" height="33" width="23" border="0" align="MIDDLE"> etc.   Müller's method uses 3
+initial guesses <img src="M%C3%BCller's%20Method_pliki/img817.png" alt="$x_0, x_1, x_2$" height="33" width="76" border="0" align="MIDDLE"> and determines the intersection
+with the <img src="M%C3%BCller's%20Method_pliki/img16.png" alt="$x$" height="17" width="15" border="0" align="BOTTOM"> axis of a parabola, as shown in Figure <a href="http://www.physics.arizona.edu/~restrepo/475A/Notes/sourcea-/node25.html#fg.mull">26</a>.
+Note that this is done by finding the root of an explicit
+quadratic equation.  The case where the roots are not real is
+handled as well, though the geometric interpretation is more
+complicated.  (This is where the analyticity of the function is
+important, it makes the value of the function for a complex
+argument meaningful).
+
+</p><div align="CENTER"><a name="fg.secnt"></a><a name="1591"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure 25:</strong>
+Finding zeros with the Secant Method. We look for the
+intersection of the secant and the <img src="M%C3%BCller's%20Method_pliki/img16.png" alt="$x$" height="17" width="15" border="0" align="BOTTOM">-axis. The approximate root is
+<img src="M%C3%BCller's%20Method_pliki/img25.png" alt="$x_2$" height="33" width="23" border="0" align="MIDDLE">. </caption>
+<tbody><tr><td>
+<div align="CENTER"><img src="M%C3%BCller's%20Method_pliki/img818.png" alt="\includegraphics[totalheight=3in]{secnt.eps}" height="343" width="376" border="0" align="BOTTOM">
+</div></td></tr>
+</tbody></table>
+</div>
+
+<div align="CENTER"><a name="fg.mull"></a><a name="7994"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure 26:</strong>
+Finding zeros using Müller's method. We locally fit a
+parabola and look at the intersection of the parabola with the
+<img src="M%C3%BCller's%20Method_pliki/img16.png" alt="$x$" height="17" width="15" border="0" align="BOTTOM">-axis.</caption>
+<tbody><tr><td>
+<div align="CENTER"><img src="M%C3%BCller's%20Method_pliki/img819.png" alt="\includegraphics[totalheight=3in]{mull.eps}" height="343" width="384" border="0" align="BOTTOM">
+</div></td></tr>
+</tbody></table>
+</div>
+
+<p>
+Consider <!-- MATH
+ $P(x)=a(x-x_2)^2+b(x-x_2)+c$
+ -->
+<img src="M%C3%BCller's%20Method_pliki/img820.png" alt="$P(x)=a(x-x_2)^2+b(x-x_2)+c$" height="38" width="283" border="0" align="MIDDLE">
+
+</p><p>
+make it pass through <!-- MATH
+ $(x_0, f(x_01)),\ (x_1, f(x_1)),\ (x_2,
+f(x_2))$
+ -->
+<img src="M%C3%BCller's%20Method_pliki/img821.png" alt="$(x_0, f(x_01)),\ (x_1, f(x_1)),\ (x_2,
+f(x_2))$" height="37" width="299" border="0" align="MIDDLE">
+
+</p><p>
+Determine <img src="M%C3%BCller's%20Method_pliki/img822.png" alt="$a, b, c$" height="34" width="47" border="0" align="MIDDLE">:
+</p><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{eqnarray*}
+f(x_0)&=&a(x_0-x_2)^2+b(x_0-x_2)+c\\
+     f(x_1)&=&a(x_1-x_2)^2+b(x_1-x_2)+c\\
+     f(x_2)&=&a\cdot 0^2+b\cdot 0+c\\
+     c&=&f(x_2)\\
+     b&=&\frac{(x_0-x_2)^2[f(x_1)-f(x_2)]-(x_1-x_2)^2[f(x_0)-f(x_2)]}
+        {(x_0-x_2)(x_1-x_2)(x_0-x_1)}\\
+                                     \\
+     a&=&\frac{(x_1-x_2)[f(x_0)-f(x_2)]-(x_0-x_2)[f(x_1)-f(x_2)]}
+       {(x_0-x_2)(x_1-x_2)(x_0-x_1)}
+\end{eqnarray*}
+ -->
+<img src="M%C3%BCller's%20Method_pliki/img823.png" alt="\begin{eqnarray*}
+f(x_0)&amp;=&amp;a(x_0-x_2)^2+b(x_0-x_2)+c\\
+f(x_1)&amp;=&amp;a(x_1-x_2)^2+...
+...f(x_2)]-(x_0-x_2)[f(x_1)-f(x_2)]}
+{(x_0-x_2)(x_1-x_2)(x_0-x_1)}
+\end{eqnarray*}" height="230" width="522" border="0">
+<br clear="ALL"></div><p></p>
+<br clear="ALL"><p></p>
+<br clear="ALL"><p></p>
+To find <img src="M%C3%BCller's%20Method_pliki/img824.png" alt="$x_3$" height="33" width="23" border="0" align="MIDDLE">, the zero of <img src="M%C3%BCller's%20Method_pliki/img727.png" alt="$P$" height="17" width="19" border="0" align="BOTTOM">, apply the quadratic formula to
+<img src="M%C3%BCller's%20Method_pliki/img727.png" alt="$P$" height="17" width="19" border="0" align="BOTTOM">. There will be two roots.  The root we are interested in is
+the one that is close to <img src="M%C3%BCller's%20Method_pliki/img25.png" alt="$x_2$" height="33" width="23" border="0" align="MIDDLE">.   To avoid round-off errors due to
+subtraction of nearby equal numbers, use:
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+x_3-x_2=\frac{-2c}{b\pm\sqrt{b^2-4ac}}\quad
+         2\mbox { possibilities.}
+\end{displaymath}
+ -->
+
+<img src="M%C3%BCller's%20Method_pliki/img825.png" alt="\begin{displaymath}
+x_3-x_2=\frac{-2c}{b\pm\sqrt{b^2-4ac}}\quad
+2\mbox { possibilities.}
+\end{displaymath}" height="50" width="334" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+use the sign that agrees with the discriminant, i.e. the one that
+gives largest denominator, and a result closer to <img src="M%C3%BCller's%20Method_pliki/img824.png" alt="$x_3$" height="33" width="23" border="0" align="MIDDLE">
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+x_3=x_2-\frac{2c}{b+sgn(b)\sqrt{b^2-4ac}}
+\end{displaymath}
+ -->
+
+<img src="M%C3%BCller's%20Method_pliki/img826.png" alt="\begin{displaymath}
+x_3=x_2-\frac{2c}{b+sgn(b)\sqrt{b^2-4ac}}
+\end{displaymath}" height="52" width="252" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+Once <img src="M%C3%BCller's%20Method_pliki/img824.png" alt="$x_3$" height="33" width="23" border="0" align="MIDDLE">, is determined, let <!-- MATH
+ $x_0=x_1\quad x_1=x_2\quad x_2=x_3$
+ -->
+<img src="M%C3%BCller's%20Method_pliki/img827.png" alt="$x_0=x_1\quad x_1=x_2\quad x_2=x_3$" height="33" width="227" border="0" align="MIDDLE">
+and repeat
+
+<p>
+<u>Algorithm</u>:  Müller find <img src="M%C3%BCller's%20Method_pliki/img16.png" alt="$x$" height="17" width="15" border="0" align="BOTTOM"> such that <img src="M%C3%BCller's%20Method_pliki/img292.png" alt="$f(x)=0$" height="37" width="76" border="0" align="MIDDLE"> with <img src="M%C3%BCller's%20Method_pliki/img817.png" alt="$x_0, x_1, x_2$" height="33" width="76" border="0" align="MIDDLE">
+
+</p><p>
+input:  <!-- MATH
+ $x_0, x_1, x_2,$
+ -->
+<img src="M%C3%BCller's%20Method_pliki/img828.png" alt="$x_0, x_1, x_2,$" height="33" width="81" border="0" align="MIDDLE"> TOL, <img src="M%C3%BCller's%20Method_pliki/img476.png" alt="$N_0$" height="34" width="27" border="0" align="MIDDLE">
+<br>
+output: approximate <img src="M%C3%BCller's%20Method_pliki/img16.png" alt="$x$" height="17" width="15" border="0" align="BOTTOM"> or
+failure
+
+</p><p>
+<br></p><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{ll}
+     \mbox {Step 1}  &  \mbox {Set }h_1=x_1-x_0\\
+             &              h_2=x_2-x_1\\
+             &  \delta_1=(f(x_1)-f(x_0))/h_1\\
+             &  \delta_2=(f(x_2)-f(x_1))/h_2;\\
+             &  d=(\delta_2-\delta_1)/(h_2+h_1)\\
+             &  i=2\\
+                   \\
+     \mbox {Step 2}  &  \mbox {While } i\le N_0\; do
+\mbox { Steps 3 - 7 }\\
+                      \\
+     \mbox {Step 3}  &  b=\delta_2+h_2d\\
+                     &  D=\sqrt{b^2-4f(x_2)d}\quad \%
+\mbox { may be complex}\\
+                        \\
+     \mbox {Step 4}  &\mbox { if } |b-D|<|b+d|\\
+                     & \mbox{ then set }\\
+     E=b+D           & \mbox { else set } E=b-D\\
+                                               \\
+    \mbox {Step 5}  &  h=-2f(x_2)/E\\
+                     &  p=x_2+h\\
+                                                  \\
+     \mbox {Step 6}  &  \mbox {if } |h|<TOL\mbox { then }\\
+                     &  \mbox {output } p\\
+                     &  \mbox {STOP}\\
+      \end{array}
+\end{displaymath}
+ -->
+
+<img src="M%C3%BCller's%20Method_pliki/img829.png" alt="\begin{displaymath}
+\begin{array}{ll}
+\mbox {Step 1} &amp; \mbox {Set }h_1=x_1-x_0\...
+...en }\\
+&amp; \mbox {output } p\\
+&amp; \mbox {STOP}\\
+\end{array}\end{displaymath}" height="516" width="438" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+<p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{eqnarray*}
+\begin{tabular}{cc|c}
+\mbox {Step 7} &  $x_0=x_1$\  & $d=(\delta_2-\delta_1)/(h_1+h_2)$\\
+                     &  $x_1 = x_2$\  & $i=i+1$\\
+                     &  $x_2 = p$\    & \mbox {Step 8 output (`Failure')}
+\\
+                     &  $h_1 = x_ix_0$\     &  \mbox {END.}\\
+                     &  $h_2 = x_2-x_1$\    &\\
+                     &  $\delta_1 = (f(x_1)-f(x_0))/h_1$\  &\\
+                     &  $\delta_2 = (f(x_2)-f(x_1))/h_2$\  &
+\end{tabular}
+\end{eqnarray*}
+ -->
+<img src="M%C3%BCller's%20Method_pliki/img830.png" alt="\begin{eqnarray*}
+\begin{tabular}{cc\vert c}
+\mbox {Step 7} &amp; $x_0=x_1$\ &amp; $d=(...
+...)/h_1$\ &amp;\\
+&amp; $\delta_2 = (f(x_2)-f(x_1))/h_2$\ &amp;
+\end{tabular}\end{eqnarray*}" height="168" width="483" border="0">
+<br clear="ALL"></div><p></p>
+<br clear="ALL"><p></p>
+<br clear="ALL"><p></p>
+Consider the function <img src="M%C3%BCller's%20Method_pliki/img831.png" alt="$f(x)=e^x+1$" height="37" width="116" border="0" align="MIDDLE">.  Clearly this has no real
+roots.  Suppose that we start with three initial ``guesses''
+<img src="M%C3%BCller's%20Method_pliki/img832.png" alt="$x_0=1$" height="33" width="57" border="0" align="MIDDLE"> and <img src="M%C3%BCller's%20Method_pliki/img833.png" alt="$x_1=0$" height="33" width="57" border="0" align="MIDDLE"> and <img src="M%C3%BCller's%20Method_pliki/img834.png" alt="$x_2=-1$" height="33" width="72" border="0" align="MIDDLE">, Müllers method would then lead
+us to find the quadratic polynomial passing through
+<img src="M%C3%BCller's%20Method_pliki/img835.png" alt="$(1,e+1)$" height="37" width="78" border="0" align="MIDDLE">,<img src="M%C3%BCller's%20Method_pliki/img836.png" alt="$(0,2)$" height="37" width="46" border="0" align="MIDDLE"> and  <img src="M%C3%BCller's%20Method_pliki/img837.png" alt="$(-1,1+1/e)$" height="37" width="112" border="0" align="MIDDLE">.  That  is
+<!-- MATH
+ $P(x)=a(x+1)^2+b(x+1)+c$
+ -->
+<img src="M%C3%BCller's%20Method_pliki/img838.png" alt="$P(x)=a(x+1)^2+b(x+1)+c$" height="38" width="264" border="0" align="MIDDLE">
+<p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{eqnarray*}
+c&=&f(x_2)=1+1/e\approx 1.3679\\
+     b&=&\frac{(x_0-x_2)^2[f(x_1)-f(x_2)]-(x_1-x_2)^2[f(x_0)-f(x_2)]}
+        {(x_0-x_2)(x_1-x_2)(x_0-x_1)}\\&=&
+        \frac{4(1-1/e)-(e-1/e)}{2}\approx 0.0890 \\
+                                     \\
+     a&=&\frac{(x_1-x_2)[f(x_0)-f(x_2)]-(x_0-x_2)[f(x_1)-f(x_2)]}
+       {(x_0-x_2)(x_1-x_2)(x_0-x_1)}\\&=&
+       \frac{(e-1/e)-2(1-1/e)}{2}\approx
+       0.5431
+\end{eqnarray*}
+ -->
+<img src="M%C3%BCller's%20Method_pliki/img839.png" alt="\begin{eqnarray*}
+c&amp;=&amp;f(x_2)=1+1/e\approx 1.3679\\
+b&amp;=&amp;\frac{(x_0-x_2)^2[f(x_...
+...-x_2)(x_0-x_1)}\\ &amp;=&amp;
+\frac{(e-1/e)-2(1-1/e)}{2}\approx
+0.5431
+\end{eqnarray*}" height="245" width="489" border="0">
+<br clear="ALL"></div><p></p>
+<br clear="ALL"><p></p>
+<br clear="ALL"><p></p>
+<img src="M%C3%BCller's%20Method_pliki/img824.png" alt="$x_3$" height="33" width="23" border="0" align="MIDDLE"> is found as the root of <img src="M%C3%BCller's%20Method_pliki/img729.png" alt="$P(x)$" height="37" width="44" border="0" align="MIDDLE"> that is close to <img src="M%C3%BCller's%20Method_pliki/img25.png" alt="$x_2$" height="33" width="23" border="0" align="MIDDLE">, that
+is
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+x_3-x_2=x_3+1=\frac{-2c}{b+\sqrt{b^2-4ac}}\approx -0.0820 +
+1.5849i
+\end{displaymath}
+ -->
+
+<img src="M%C3%BCller's%20Method_pliki/img840.png" alt="\begin{displaymath}
+x_3-x_2=x_3+1=\frac{-2c}{b+\sqrt{b^2-4ac}}\approx -0.0820 +
+1.5849i\end{displaymath}" height="50" width="451" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+so <!-- MATH
+ $x_3\approx -1.0820 + 1.5849i$
+ -->
+<img src="M%C3%BCller's%20Method_pliki/img841.png" alt="$x_3\approx -1.0820 + 1.5849i $" height="33" width="196" border="0" align="MIDDLE">
+ we use the
+positive sign in front of the square root in the denominator to
+match the sign of <img src="M%C3%BCller's%20Method_pliki/img178.png" alt="$b$" height="18" width="13" border="0" align="BOTTOM"> in order to choose the value of <img src="M%C3%BCller's%20Method_pliki/img842.png" alt="$x_3-x_2$" height="33" width="64" border="0" align="MIDDLE">
+with smallest absolute value.  Of course, in this case since the
+term under the square root is negative, the two roots have the
+same absolute value, but, we choose this one even so, since that
+is the way the algorithm is defined.  However, this raises the
+issue of how to pick the sign of the square root when <img src="M%C3%BCller's%20Method_pliki/img178.png" alt="$b$" height="18" width="13" border="0" align="BOTTOM"> may not
+be real.  The guiding principal is to always make the choice that
+picks the root of the quadratic that is closest to our most recent
+estimate.  At the next iteration, we get <br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+a \approx 0.2157 +
+0.1094i\quad b \approx   0.0343 + 0.5563i\quad c \approx   0.9952
++ 0.3389i
+\end{displaymath}
+ -->
+
+<img src="M%C3%BCller's%20Method_pliki/img843.png" alt="\begin{displaymath}a \approx 0.2157 +
+0.1094i\quad b \approx 0.0343 + 0.5563i\quad c \approx 0.9952
++ 0.3389i
+\end{displaymath}" height="30" width="539" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+the formula for
+<img src="M%C3%BCller's%20Method_pliki/img844.png" alt="$x_4$" height="33" width="23" border="0" align="MIDDLE"> is <!-- MATH
+ $x_4-x_3=-2c/(b\pm\sqrt{b^2-4ac})$
+ -->
+<img src="M%C3%BCller's%20Method_pliki/img845.png" alt="$x_4-x_3=-2c/(b\pm\sqrt{b^2-4ac})$" height="42" width="259" border="0" align="MIDDLE">. The two possible
+values of the denominator are approximately <!-- MATH
+ $0.3595 - 0.5040i$
+ -->
+<img src="M%C3%BCller's%20Method_pliki/img846.png" alt="$0.3595 - 0.5040i$" height="33" width="138" border="0" align="MIDDLE"> and
+<!-- MATH
+ $-0.2909 + 1.6167i$
+ -->
+<img src="M%C3%BCller's%20Method_pliki/img847.png" alt="$-0.2909 + 1.6167i$" height="33" width="153" border="0" align="MIDDLE"> , the larger choice is the latter thus we use
+the negative sign in defining <img src="M%C3%BCller's%20Method_pliki/img844.png" alt="$x_4$" height="33" width="23" border="0" align="MIDDLE">. This sort of checking is
+exactly what is in the algorithm listed above.  We could avoid the
+comparison by rewriting:
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+x_4-x_3=-2cb^*/(|b|^2+\sqrt{|b|^4-4ac(b^*)^2})
+\end{displaymath}
+ -->
+
+<img src="M%C3%BCller's%20Method_pliki/img848.png" alt="\begin{displaymath}x_4-x_3=-2cb^*/(\vert b\vert^2+\sqrt{\vert b\vert^4-4ac(b^*)^2})\end{displaymath}" height="33" width="338" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+where <img src="M%C3%BCller's%20Method_pliki/img849.png" alt="$b^*$" height="18" width="20" border="0" align="BOTTOM"> is
+the complex conjugate of <img src="M%C3%BCller's%20Method_pliki/img178.png" alt="$b$" height="18" width="13" border="0" align="BOTTOM">, and the square root is always chosen
+so the result has non-negative real part.   In this example, if we
+continue, the algorithm will converge to the root <img src="M%C3%BCller's%20Method_pliki/img850.png" alt="$x=\pi i$" height="17" width="58" border="0" align="BOTTOM">.  Here
+is a table of the next few values:
+
+<p>
+</p><div align="CENTER">
+<table cellpadding="3" border="1">
+<tbody><tr><td align="RIGHT"><font size="-1">
+<img src="M%C3%BCller's%20Method_pliki/img30.png" alt="$n$" height="17" width="16" border="0" align="BOTTOM"></font></td>
+<td align="RIGHT"><font size="-1"><img src="M%C3%BCller's%20Method_pliki/img787.png" alt="$x_n$" height="33" width="24" border="0" align="MIDDLE"></font></td>
+</tr>
+<tr><td align="RIGHT"><font size="-1">  
+0</font></td>
+<td align="RIGHT"><font size="-1">1.0000</font></td>
+</tr>
+<tr><td align="RIGHT"><font size="-1"> 
+1</font></td>
+<td align="RIGHT"><font size="-1">0.0000</font></td>
+</tr>
+<tr><td align="RIGHT"><font size="-1"> 
+2</font></td>
+<td align="RIGHT"><font size="-1">-1.0000</font></td>
+</tr>
+<tr><td align="RIGHT"><font size="-1"> 
+3</font></td>
+<td align="RIGHT"><font size="-1">-1.0820 + 1.5849i</font></td>
+</tr>
+<tr><td align="RIGHT"><font size="-1"> 
+4</font></td>
+<td align="RIGHT"><font size="-1">-1.2735 + 2.8505i</font></td>
+</tr>
+<tr><td align="RIGHT"><font size="-1"> 
+5</font></td>
+<td align="RIGHT"><font size="-1"> -0.3814 + 3.7475i</font></td>
+</tr>
+<tr><td align="RIGHT"><font size="-1"> 
+6 </font></td>
+<td align="RIGHT"><font size="-1"> 0.1973 +3.1457i</font></td>
+</tr>
+<tr><td align="RIGHT"><font size="-1"> 
+7 </font></td>
+<td align="RIGHT"><font size="-1"> -0.0168 + 3.1571i</font></td>
+</tr>
+<tr><td align="RIGHT"><font size="-1"> 
+8</font></td>
+<td align="RIGHT"><font size="-1">0.0000 + 3.1421i</font></td>
+</tr>
+<tr><td align="RIGHT"><font size="-1"> 
+9 </font></td>
+<td align="RIGHT"><font size="-1"> 0.0000 + 3.1416i</font></td>
+</tr>
+</tbody></table>
+
+</div>
+
+<p>
+</p><hr>
+<!--Navigation Panel-->
+<a name="tex2html427" href="http://www.physics.arizona.edu/~restrepo/475A/Notes/sourcea-/node26.html">
+<img alt="next" src="file:/usr/share/latex2html/icons/next.png" height="24" width="37" border="0" align="BOTTOM"></a> 
+<a name="tex2html425" href="http://www.physics.arizona.edu/~restrepo/475A/Notes/sourcea-/node23.html">
+<img alt="up" src="file:/usr/share/latex2html/icons/up.png" height="24" width="26" border="0" align="BOTTOM"></a> 
+<a name="tex2html421" href="http://www.physics.arizona.edu/~restrepo/475A/Notes/sourcea-/node24.html">
+<img alt="previous" src="file:/usr/share/latex2html/icons/prev.png" height="24" width="63" border="0" align="BOTTOM"></a>   
+<br>
+<b> Next:</b> <a name="tex2html428" href="http://www.physics.arizona.edu/~restrepo/475A/Notes/sourcea-/node26.html">FUNCTION NORMS</a>
+<b> Up:</b> <a name="tex2html426" href="http://www.physics.arizona.edu/~restrepo/475A/Notes/sourcea-/node23.html">Zeros of Polynomials, Horner's</a>
+<b> Previous:</b> <a name="tex2html422" href="http://www.physics.arizona.edu/~restrepo/475A/Notes/sourcea-/node24.html">Horner's Method</a>
+<!--End of Navigation Panel-->
+<address>
+Juan Restrepo
+2003-04-12
+</address>
+
+
+</body></html>
