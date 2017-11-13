@@ -11,12 +11,12 @@ A method for finding polynomial roots
 
 ## Instrukcja krótka:
 
-//Dobieramy 3 punkty na przebiegu badanej funkcji i opieramy na nich parabolę
-//Znajdujemy współczynniki tej paraboli, które sprawiają że przechodzi przez te 3 punkty
-//Wyznaczamy punkt przecięcia paraboli z osią x, ten punkt jest przybliżeniem miejsca zerowego funkcji
+- Dobieramy 3 punkty na przebiegu badanej funkcji i opieramy na nich parabolę
+- Znajdujemy współczynniki tej paraboli, które sprawiają że przechodzi przez te 3 punkty
+- Wyznaczamy punkt przecięcia paraboli z osią x, ten punkt jest przybliżeniem miejsca zerowego funkcji
+- Używając wyznaczonego punktu, oraz dwóch poprzednich punktów, powtarzamy kroki 1-3 w celu uzyskania dokładniejszego wyniku
 
 ![obraz](https://user-images.githubusercontent.com/718163/32727575-429d060e-c87d-11e7-9187-9cc1b22cf17f.png)
-
 
 
 ## Algorytm
