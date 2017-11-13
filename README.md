@@ -33,3 +33,10 @@ A method for finding polynomial roots
 `Source: http://www.geeksforgeeks.org/program-muller-method/`
 
 In file mueller.cpp
+
+
+### Użycie programu i sprawdzenie dokładności
+
+![obraz](https://user-images.githubusercontent.com/718163/32728270-ebbc9b3a-c87f-11e7-92d2-67c2c1457c12.png)
+
+Program dla danego wielomianu jest całkiem dokładny.
